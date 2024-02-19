@@ -1,0 +1,204 @@
+{
+  "user": [
+    {
+      "name": "Golden..",
+      "mobNumber": "7481215263",
+      "uploadPhoto": "C:\\fakepath\\image (17).png",
+      "age": "26",
+      "dob": "2024-01-06",
+      "email": "goldy@yopmail.com",
+      "password": "123456",
+      "role": "admin",
+      "gender": "female",
+      "address": {
+        "id": 0,
+        "addLine1": "85 btown",
+        "addLine2": "abc",
+        "city": "Basildon",
+        "state": "u.p",
+        "zipCode": "123456"
+      },
+      "agreetc": true,
+      "aboutYou": "hello i.am admin",
+      "id": "67"
+    },
+    {
+      "name": "semmy tom 852",
+      "mobNumber": "748596415263",
+      "uploadPhoto": "C:\\fakepath\\0S1A8234.jpg",
+      "age": "26",
+      "dob": "2024-01-04",
+      "email": "prem@yopmail.com",
+      "password": "123456",
+      "role": "buyer",
+      "gender": "female",
+      "address": {
+        "id": 0,
+        "addLine1": "85,btown",
+        "addLine2": "abc",
+        "city": "Basildon",
+        "state": "u.p",
+        "zipCode": "123456"
+      },
+      "agreetc": true,
+      "aboutYou": "hello i.am admin",
+      "id": "6338"
+    },
+    {
+      "id": "9919",
+      "name": "prem singh",
+      "mobNumber": "748596415263",
+      "uploadPhoto": "C:\\fakepath\\image (16).png",
+      "age": "26",
+      "dob": "2024-01-05",
+      "email": "prem@yopmail.com",
+      "password": "123654",
+      "role": "buyer",
+      "gender": "male",
+      "address": {
+        "id": 0,
+        "addLine1": "85,btown",
+        "addLine2": "abc",
+        "city": "Basildon",
+        "state": "u.p",
+        "zipCode": "123456"
+      },
+      "agreetc": true,
+      "aboutYou": "dummy"
+    },
+    {
+      "id": "9911",
+      "name": "prem singh",
+      "mobNumber": "748596415263",
+      "uploadPhoto": "C:\\fakepath\\image (16).png",
+      "age": "26",
+      "dob": "2024-01-05",
+      "email": "prem@yopmail.com",
+      "password": "123654",
+      "role": "buyer",
+      "gender": "male",
+      "address": {
+        "id": 0,
+        "addLine1": "85,btown",
+        "addLine2": "abc",
+        "city": "Basildon",
+        "state": "u.p",
+        "zipCode": "123456"
+      },
+      "agreetc": true,
+      "aboutYou": "dummy"
+    },
+    {
+      "id": "9910",
+      "name": "prem singh",
+      "mobNumber": "748596415263",
+      "uploadPhoto": "C:\\fakepath\\image (16).png",
+      "age": "26",
+      "dob": "2024-01-05",
+      "email": "prem@yopmail.com",
+      "password": "123654",
+      "role": "buyer",
+      "gender": "male",
+      "address": {
+        "id": 0,
+        "addLine1": "85,btown",
+        "addLine2": "abc",
+        "city": "Basildon",
+        "state": "u.p",
+        "zipCode": "123456"
+      },
+      "agreetc": true,
+      "aboutYou": "dummy"
+    },
+    {
+      "id": "c66e",
+      "name": "neel singh",
+      "mobNumber": "85296374125",
+      "uploadPhoto": null,
+      "age": "85",
+      "dob": "2024-01-16",
+      "email": "neel@yopmail.com",
+      "password": "123456",
+      "role": "seller",
+      "gender": "female",
+      "address": {
+        "id": 0,
+        "addLine1": "navagam",
+        "addLine2": "abc",
+        "city": "surat",
+        "state": "u.p",
+        "zipCode": "258963"
+      },
+      "agreetc": true,
+      "aboutYou": "i m teacher"
+    }
+  ],
+  "product": [
+    {
+      "id": "1",
+      "name": "iPhone 9",
+      "uploadPhotos": "https://img.freepik.com/free-photo/smartphone-balancing-with-pink-background_23-2150271746.jpg?size=338&ext=jpg&ga=GA1.1.1448711260.1706572800&semt=sph",
+      "productDesc": "An apple mobile which is nothing like apple",
+      "mrp": "300",
+      "dp": "199",
+      "status": "seller"
+    },
+    {
+      "id": "2",
+      "name": "iPhone 12",
+      "uploadPhotos": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGLcmqqO1gjkuY7QFTOkkoxL61_NRtsQ9E_RsVxUt5cYhdxOxGhcCAVGGPMl70BYFfTWA&usqp=CAU",
+      "productDesc": "An apple mobile which is nothing like apple",
+      "mrp": "900",
+      "dp": "199",
+      "rating": 4.69,
+      "status": "publish"
+    },
+    {
+      "id": "3",
+      "name": "iPhone 7",
+      "uploadPhotos": "https://www.pbtech.co.nz/fileslib/_20221010125428_mobile-phones-cat-iphone-ios-mobile-001.png",
+      "productDesc": "An apple mobile which is nothing like apple",
+      "mrp": "300",
+      "dp": "199",
+      "rating": 4.69,
+      "status": "inactive"
+    },
+    {
+      "id": "4",
+      "name": "iPhone 9",
+      "uploadPhotos": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuIQS3bGv4HIxynBDMXhJh7pIZ1xUWkKJ69qkZkKj1DqbT2xaLoUJ50BIctkrA31aUQ8I&usqp=CAU",
+      "productDesc": "An apple mobile which is nothing like apple",
+      "mrp": "300",
+      "dp": "199",
+      "rating": 4.69,
+      "status": "inactive"
+    }
+  ],
+  "order": [
+    {
+      "id": "1",
+      "userId": "3",
+      "sellerId": "2",
+      "product": {
+        "id": 1,
+        "name": "iPhone 9",
+        "uploadPhotos": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGLcmqqO1gjkuY7QFTOkkoxL61_NRtsQ9E_RsVxUt5cYhdxOxGhcCAVGGPMl70BYFfTWA&usqp=CAU",
+        "productDesc": "An apple mobile which is nothing like apple",
+        "mrp": "300",
+        "dp": "199",
+        "rating": 4.69,
+        "status": "inactive"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addressLine1": "navagam",
+        "addressLine2": "dindoli",
+        "city": "surat",
+        "state": "gujarat",
+        "zipCode": "934210"
+      },
+      "contact": "0123456789",
+      "dateTime": "18/7/2024"
+    }
+  ]
+}

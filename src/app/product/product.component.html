@@ -1,0 +1,172 @@
+<div class="container">
+  <h1 class="text-center">
+    <p>Product List</p>
+  </h1>
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#addEditUserModal"
+    (click)="addNewPopup()"
+  >
+    Add Product
+  </button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Mrp</th>
+        <th>Status</th>
+
+        <th width="250px">Action</th>
+      </tr>
+
+      <tr *ngFor="let prod of all_product_data" class="text-center">
+        <td>
+          {{ prod.id }}
+        </td>
+        <td>
+          {{ prod.name }}
+        </td>
+        <td><img src="{{ prod.uploadPhotos }}" class="tableImg" /></td>
+        <td>
+          {{ prod.productDesc }}
+        </td>
+        <td>{{ prod.mrp }}</td>
+        <td class="text-capitalize">{{ prod.status }}</td>
+
+        <td>
+          <button
+            class="btn btn-info me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#addEditUserModal"
+            (click)="updateProductPopup(prod.id)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger" (click)="deleteProduct(prod.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+<!-- modal for add edit -->
+
+<div
+  class="modal fade"
+  tabindex="-1"
+  id="addEditUserModal"
+  aria-labelledby="addEditUserModal"
+  role="dialog"
+>
+  <div class="modal-dialog" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ addEditPopup_header }}</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <form [formGroup]="addEditProductDForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="name">Upload photos</label>
+                <input
+                  type="file"
+                  id="uploadPhotos"
+                  formControlName="uploadPhotos"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="productDesc">Description</label>
+                <input
+                  type="text"
+                  id="productDesc"
+                  formControlName="productDesc"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="mrp">Mrp</label>
+                <input
+                  type="text"
+                  id="mrp"
+                  formControlName="mrp"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="dp">Discount price</label>
+                <input
+                  type="text"
+                  id="dp"
+                  formControlName="dp"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select
+                  class="form-select form-select-sm"
+                  aria-label=".form-select-sm example"
+                  formControlName="status"
+                >
+                  <option selected disabled value="">Choose...</option>
+                  <option value="admin">Draft</option>
+                  <option value="seller">Publish</option>
+                  <option value="buyer">Inactive</option>
+                </select>
+              </div>
+
+              <button
+                class="btn btn-success mt-4"
+                type="submit"
+                *ngIf="add_product"
+                data-bs-dismiss="modal"
+                (click)="addNewProduct()"
+              >
+                add
+              </button>
+              <button
+                class="btn btn-success mt-4"
+                type="submit"
+                *ngIf="edit_product"
+                data-bs-dismiss="modal"
+                (click)="updateProduct()"
+              >
+                Update
+              </button>
+
+              <!-- <p class="ms-4 mt-4" routerLink="/sign-in">
+                  
+                  cancel
+                </p> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<br />
+<h1>you click on product id: {{ single_product_id }}</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="" routerLink="/buyer-dashboard">Buyer</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="">Checkout</a>
+    </li>
+  </ol>
+</nav>
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header boarder">Product Details</div>
+      <div class="col-body">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{{ user_product.uploadPhotos }}" class="card-img-top" />
+            {{ user_product.name }}
+          </div>
+          <div class="col-md-8">
+            <p class="card-text">{{ user_product.name }}</p>
+            <p class="card-text">
+              <span class="flot-left"
+                ><strong> MRP</strong>: <del> {{ user_product.mrp }}</del></span
+              >
+              <span class="flot-left ms-3"
+                ><strong>DP</strong>:{{ user_product.dp }}</span
+              >
+            </p>
+
+            <p class="card-text">
+              <span class="flot-left">{{ user_product.productDesc }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">Address</div>
+      <div class="card-body">
+        <div class="card-title">
+          {{ user_address.addLine1 + " ," + user_address.addLine2 }}
+        </div>
+        <div class="card-text">
+          {{ user_address.city + " ," + user_address.state }}
+        </div>
+        <div class="card-text">Postal code: {{ user_address.zipCode }}</div>
+        <div class="card-text">Contact no. : {{ user_contact }}</div>
+        <a href="" class="btn btn-primary mt-3" (click)="placeNewOrder()"
+          >Deliver here...</a
+        >
+        <div class="alert alert-primary mt-2" role="alert">
+          <strong>Note: </strong> We are not deliver on multiple location!!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

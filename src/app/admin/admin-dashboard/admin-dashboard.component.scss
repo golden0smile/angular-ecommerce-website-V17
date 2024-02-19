@@ -1,0 +1,26 @@
+.progressbar-div {
+  .progress {
+    margin-top: 0.7rem !important;
+    height: 1.5rem !important;
+    .progress-bar {
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+.userDiv {
+  background-color: white;
+  strong {
+    display: inline-block;
+  }
+}
+
+.parentWrappe {
+  display: flex;
+
+  .total {
+    background-color: gray;
+    border-radius: 2%;
+  }
+}

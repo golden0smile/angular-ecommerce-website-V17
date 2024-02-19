@@ -1,0 +1,320 @@
+<div class="container">
+  <h1 class="text-center">
+    <p>User List</p>
+  </h1>
+  <button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#addEditUserModal"
+  (click)="addUserPopup()"
+>
+  Add user
+</button>
+  <table class="table table-striped">
+   
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Address</th>
+
+        <th width="250px">Action</th>
+      </tr>
+
+      <tr *ngFor="let user of all_user_data">
+        <td>
+          {{ user.id }}
+        </td>
+        <td>
+          {{ user.name }}
+        </td>
+        <td>
+          {{ user.mobNumber }}
+        </td>
+        <td>{{ user.email }}</td>
+        <td class="text-capitalize">{{ user.role }}</td>
+        <td>
+          {{
+            user.address.addLine1 +
+              " ," +
+              user.address.addLine2 +
+              " ," +
+              user.address.city +
+              " ," +
+              user.address.state +
+              " ," +
+              user.address.zipCode
+          }}
+        </td>
+
+        <!-- <td>
+            <a
+              href="#"
+              [routerLink]="['/post/', user.id, 'edit']"
+              class="btn btn-warning"
+              >Edit</a
+            >
+          </td> -->
+        <td>
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">
+            Delete
+          </button>
+          <button
+            class="btn btn-info ms-2"
+            data-bs-toggle="modal"
+            data-bs-target="#addEditUserModal"
+            (click)="editUserPopup(user.id)"
+          >
+            Edit
+          </button>
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+<!-- modal for add edit -->
+
+<div
+  class="modal fade"
+  tabindex="-1"
+  id="addEditUserModal"
+  aria-labelledby="addEditUserModal"
+  role="dialog"
+>
+  <div class="modal-dialog" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ popup_header }}</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <form [formGroup]="addEditUserForm">
+                
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="aboutYou">about You</label>
+                <input
+                  type="text"
+                  id="aboutYou"
+                  formControlName="aboutYou"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="mobNumber">Mobile number</label>
+                <input
+                  type="text"
+                  id="mobNumber"
+                  formControlName="mobNumber"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input
+                  type="text"
+                  id="age"
+                  formControlName="age"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="dob">DOB</label>
+                <input
+                  type="date"
+                  id="dob"
+                  formControlName="dob"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="role">Role</label>
+                <select
+                  class="form-select form-select-sm"
+                  aria-label=".form-select-sm example"
+                  formControlName="role"
+                >
+                  <option value="admin">Admin</option>
+                  <option value="seller">Seller</option>
+                  <option value="buyer">Buyer</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <div class="form-group">
+                    <label for="mobNumber">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      formControlName="email"
+                      class="form-control"
+                      placeholder="abc@gmail.com"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      formControlName="password"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="address1" class="form-label">Address</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addLine1"
+                      formControlName="addLine1"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="addLine2" class="form-label"
+                      >Address line 2</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addLine2"
+                      formControlName="addLine2"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="city" class="form-label">City</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="city"
+                      formControlName="city"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="state" class="form-label">State</label>
+                    <select
+                      class="form-select"
+                      id="state"
+                      formControlName="state"
+                    >
+                      <option selected disabled value="">Choose...</option>
+                      <option value="gujarat">Gujarat</option>
+                      <option value="u.p">U.p</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid state.
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="zipCode" class="form-label">Zip</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="zipCode"
+                      formControlName="zipCode"
+                    />
+                  </div>
+                  <div class="form-check form-check-inline form-group">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gender"
+                      id="gender"
+                      value="male"
+                      formControlName="gender"
+                    />
+                    <label class="form-check-label" for="gender">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline form-group">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gender"
+                      id="gender"
+                      value="female"
+                      formControlName="gender"
+                    />
+                    <label class="form-check-label" for="gender">Female</label>
+                  </div>
+                  <div class="form-group">
+                    <label for="uploadPhoto" class="form-label"
+                      >Upload your photo</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="uploadPhoto"
+                      formControlName="uploadPhoto"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="agreetc"
+                        formControlName="agreetc"
+                      />
+                      <label class="form-check-label" for="agreetc">
+                        terms and conditions
+                      </label>
+                      <div class="invalid-feedback">
+                        You must agree before submitting.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="btn btn-success mt-4"
+                type="submit"
+                *ngIf="add_user"
+                data-bs-dismiss="modal"
+                (click)="addUser()"
+              >
+                add
+              </button>
+              <button
+                class="btn btn-success mt-4"
+                type="submit"
+                *ngIf="edit_user"
+                data-bs-dismiss="modal"
+                (click)="updateUser()"
+              >
+                Update
+              </button>
+
+              <!-- <p class="ms-4 mt-4" routerLink="/sign-in">
+                
+                cancel
+              </p> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

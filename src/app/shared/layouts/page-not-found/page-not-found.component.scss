@@ -1,0 +1,10 @@
+.mainPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  button {
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+}
